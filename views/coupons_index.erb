@@ -1,0 +1,8 @@
+<h3> Here are all the coupons that we have. </h3>
+
+<ol>
+  <% @coupons.each do |coupon| %>
+  <li>This "<%= coupon.title %>" coupon means that you <%= coupon.description %>. The product number is  <%= coupon.product %>. Your discount is $<%= coupon.discount %> and this coupon will expire on <%= coupon.exp_date %>.
+  </li>
+
+  <% end %>
