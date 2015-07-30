@@ -1,2 +1,3 @@
-class Coupons < ActiveRecord::Base
+class CouponsModel < ActiveRecord::Base
+  self.table_name = 'coupons'
 end

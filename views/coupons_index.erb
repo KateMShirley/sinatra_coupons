@@ -1,8 +1,57 @@
-<h3> Here are all the coupons that we have. </h3>
+<h3> Coupons List </h3>
 
-<ol>
-  <% @coupons.each do |coupon| %>
-  <li>This "<%= coupon.title %>" coupon means that you <%= coupon.description %>. The product number is  <%= coupon.product %>. Your discount is $<%= coupon.discount %> and this coupon will expire on <%= coupon.exp_date %>.
-  </li>
+<li><a href='/coupons/create'>Create Coupons</a></li>
 
-  <% end %>
+
+
+<table>
+  <thead>
+        <th>
+          ID
+        </th>
+        <th>
+          Title
+        </th>
+        <th>
+          Description
+        </th>
+        <th>
+          Product #
+        </th>
+        <th>
+          Discount
+        </th>
+        <th>
+          Exp. Date
+        </th>
+        <th>
+          Edit?
+        </th>
+  </thead>
+  <tbody>
+      <% @coupons.each do |coupon| %>
+      <tr>
+        <td>
+          <%= coupon.id %>
+        </td>
+        <td>
+          <%= coupon.title %>
+        </td>
+        <td>
+          <%= coupon.description%>
+        </td>
+        <td>
+          <%= coupon.product %>
+        </td>
+        <td>
+          <%= coupon.discount %>
+        </td>
+        <td>
+          <%= coupon.exp_date %>
+        </td>
+        <td>
+          <a href='/coupons/edit/<%= coupon.id %>'>Edit</a>
+      </tr>
+      <% end %>
+  </tbody>
+</table>
