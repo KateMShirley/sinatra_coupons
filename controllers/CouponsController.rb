@@ -55,4 +55,5 @@ class CouponsController < ApplicationController
 
    erb :coupons_delete_success
   end
+
 end
